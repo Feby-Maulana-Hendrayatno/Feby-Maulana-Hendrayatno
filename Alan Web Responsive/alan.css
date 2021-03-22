@@ -1,0 +1,309 @@
+* {
+	--main-radius: 20px;
+	--main-padding: 20px;
+}
+body{
+	margin: 0;
+	padding: 0;
+	font-size: 25px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #ffffff;
+}
+
+/* yang ada pada div container*/
+.container{
+	width: 90%;
+	margin: auto;
+	overflow: hidden;
+}
+
+header{
+	background : linear-gradient(to left, #960083, #ec1063);  
+	color: #fff;
+	padding-top: 10px;  /* dari atas ke tulisan Feby */
+	min-height: 5px;
+	/* bingkai pada header */
+	border-bottom: 5px solid #10aeec; 
+	border-left: 5px solid #10aeec;
+	border-right:5px solid #10aeec;
+	border-top: 5px solid #10aeec;
+}
+
+header  form{
+    float: left;
+	display: inline;
+	padding: 0 20px 0 20px;
+	color: #fff; 
+	margin-top: 15px;
+	padding: 4px;
+	height: 25px;
+	width: 250px;
+}
+
+
+
+
+
+
+
+
+header div nav {
+	position: absolute; /* header akan tetap  walaupun discrool */
+	z-index: 10;
+	left: 0;
+	right: 0;
+	top: 0;
+	font-family: 'Montserrat', sans-serif;
+	height: 100px; 
+}
+header div nav .links {
+	float: right;
+	padding: 0;
+	margin: 0;
+	width: 65%;		/* mengatur ketiggian tulisan navbar */
+	height: 300%;
+	display: flex;	/* membuat tata letak menjadi sejajar secarahorizontal */ 
+	justify-content: space-around;	/* jarak anatara navbar sama */
+	align-items: center;		/* mendistribusikn item-item yang ada pada container di dalam header links */
+}
+header div nav .links li {
+	list-style: none;
+}
+header div nav .links a {
+	display: block;		/* untuk mengatur tinggi seleksinya */
+	padding: 1em;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+}
+/* untuk menyembunyikan ceckbox agarterlihat rapih */
+header div #nav-toggle {
+	position: absolute;
+	top: -100px;
+}
+header div nav .icon-burger {
+	display: none;
+	position: absolute;
+	right: 5%;
+	top: 80%; /* mengatur ketinggian navbar 3 agar tidak terlalu keatas */
+}
+header div nav .icon-burger .line {
+	width: 30px;
+	height: 5px;
+	background-color: #fff;
+	margin: 5px;
+	border-radius: 3px;
+	transition: all .3s ease-in-out;	/* transisi saat navbar line 3 di klik */
+}
+
+
+
+
+#showcase .container{
+	width: auto;
+	height: auto;
+	background: url(img/Background.jpg);
+	background-repeat:  no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	text-align: center;
+	margin-top: 0px;
+	font-size: 55px;
+	margin-bottom: 10px;
+	text-shadow: 2px 2px 5px #928b91;
+}
+#showcase .container p{
+	font-size: 20px;
+	height: 100%;
+	color: rgb(37, 34, 34);
+	font-size: 3vw;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, -50%) ;
+}
+
+
+
+
+#content{
+	display: grid;
+	max-height: 90rem;
+	grid-template-columns: repeat(2,minmax(0,1fr));
+	/* grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+	grid-template-areas:
+	"content1" "content2"
+	"content3" "content4";
+	grid-gap: 0.2rem; */
+	font-weight: 800;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: #004d40;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+/* #content {
+	display: flex;
+
+} */
+
+
+#content1 {
+	
+	background: #6fffd2;
+	/* grid-area: content1; */
+	border-radius: var(--main-radius);
+	padding-top: var(--main-padding);
+	margin: 10px;
+}
+
+#content1 img {
+	width: 250px;
+}
+
+#content2 {
+	margin: 10px;
+	background: #64ffda;
+	/* grid-area: content2; */
+	border-radius: var(--main-radius);
+	padding-top: var(--main-padding);
+}
+#content2 img {
+	width: 250px;
+}
+
+#content3 {
+	background: #73ffba;
+	/* grid-area: content3; */
+	border-radius: var(--main-radius);
+	padding-top: var(--main-padding);
+	margin: 10px;
+}
+#content3 img {
+	width: 250px;
+}
+
+#content4 {
+	margin: 10px;
+	background: #73ffba;
+	/* grid-area: content4; */
+	border-radius: var(--main-radius);
+	padding-top: var(--main-padding);
+}
+#content4 img {
+	width: 250px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+	
+	header div nav .links {
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 0;
+		right: 0;
+		top: 100px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column; 		/* agar tampilan navbar  membuat kolom */
+		justify-content: space-evenly;
+		background-color: rgba(0,0,0,.8);
+		overflow: hidden;			/* tulisan navbar akan disembunyikan ketika halaman menyempit */
+		box-sizing: border-box;
+		transition: all .5s ease-in-out;
+	}
+	header div nav .links a {
+		font-size: 20px;
+	}
+	/* untuk menampilkan links/ tulisan navbar */
+	header div nav :checked ~ .links {
+		bottom: 0;
+	}
+	/* mengatur tampilan elemen pada icon-burger */
+	header div nav .icon-burger {
+		display: block;
+	}
+	/* tampilan line 3 pada navbar menjadi seperti bergerak karena rotasi */
+	header div nav :checked ~ .icon-burger .line:nth-child(1) {
+		transform: translateY(10px) rotate(225deg);
+	}
+	header div nav :checked ~ .icon-burger .line:nth-child(3) {
+		transform: translateY(-10px) rotate(-225deg);
+	}
+	header div nav :checked ~ .icon-burger .line:nth-child(2) {
+		opacity: 0;
+	}
+
+	header #branding,
+	header nav,
+	header nav li,
+	#newsletter h1,
+	#newsletter form,
+	#boxes .box
+
+	{
+		float: none;
+		text-align: center;
+		width: 100%;
+	}
+
+	header{
+		padding-bottom: 20px;
+	}
+
+	#showcase h1{
+		margin-top: 40px;
+	}
+    
+
+    .img area{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-items: center;
+    }
+    .single-img{
+        padding: 0 20px 20px;
+    }
+    img:hover{
+        opacity: .5;
+        transition: .9;
+    }
+	
+	.content{
+		grid-template-columns: 1fr;
+		grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+		grid-template-areas:
+			"content1"
+			"content2"
+			"content3"
+			"content4";
+		}	
+}
+
